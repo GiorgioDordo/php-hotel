@@ -72,7 +72,7 @@ $hotels = [
                         <th><?= $hotel["name"]; ?></th>
                         <td><?= $hotel["description"]; ?></td>
                         <td><?= $hotel["parking"]  ? "si" : "no"; ?></td>
-                        <td><?= $hotel["vote"]; ?></td>
+                        <td><?= $hotel["vote"]; ?>/5</td>
                         <td><?= $hotel["distance_to_center"]; ?> Km</td>
                     </tr>
                 <?php } ?>
