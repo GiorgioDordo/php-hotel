@@ -64,6 +64,8 @@ if (isset($_GET["vote"]) && ($_GET["vote"] >= 1 && $_GET["vote"] <= 5)) {
 
     $filteredHotels = $currentArray;
 }
+
+$parkingChecked = (isset($_GET["isParking"]) && $_GET["isParking"] === "on") ? "checked" : "";
 ?>
 
 <!DOCTYPE html>
@@ -114,13 +116,13 @@ if (isset($_GET["vote"]) && ($_GET["vote"] >= 1 && $_GET["vote"] <= 5)) {
 
                 <tbody>
                     <?php foreach ($filteredHotels as $hotel) { ?>
-                    <tr>
-                        <th><?= $hotel["name"]; ?></th>
-                        <td><?= $hotel["description"]; ?></td>
-                        <td><?= $hotel["parking"]  ? "si" : "no"; ?></td>
-                        <td><?= $hotel["vote"]; ?>/5</td>
-                        <td><?= $hotel["distance_to_center"]; ?> Km</td>
-                    </tr>
+                        <tr>
+                            <th><?= $hotel["name"]; ?></th>
+                            <td><?= $hotel["description"]; ?></td>
+                            <td><?= $hotel["parking"]  ? "si" : "no"; ?></td>
+                            <td><?= $hotel["vote"]; ?>/5</td>
+                            <td><?= $hotel["distance_to_center"]; ?> Km</td>
+                        </tr>
                     <?php } ?>
                 </tbody>
             </table>
